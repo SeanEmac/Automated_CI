@@ -17,15 +17,17 @@ public class CourseProgramTest {
     
     @Test
     public void shouldCreateCourse() {   
-        CourseProgram course = new CourseProgram("CS", start, end, modules, students);
+        CourseProgram course = new CourseProgram(courseName, start, end, modules, students);
         assertEquals(course.getName(), courseName);
         assertEquals(course.getStartDate(), start);
         assertEquals(course.getEndDate(), end);
+        assertEquals(course.getModules().size(), 0);
+        assertEquals(course.getStudents().size(), 0);
     }
 
     @Test
     public void shouldUpdateCourse() {
-        CourseProgram course = new CourseProgram("CS", start, end, modules, students);
+        CourseProgram course = new CourseProgram(courseName, start, end, modules, students);
         Student student = new Student("bob", new LocalDate(1997, 5, 1), 163436183, course, modules);
         Module module = new Module("Software Engineering", "CT417", students);
         student.addModule(module);

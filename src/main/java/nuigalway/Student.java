@@ -35,7 +35,11 @@ public class Student {
         return name;
     }
 
-    private void setAge() {
+    /*
+        Age is calculated using date of birth.
+        If DOB is updated then so is Age. 
+    */
+    public void setAge() {
         this.age = Years.yearsBetween(dob, new LocalDate()).getYears();
         setUsername();
     }
@@ -61,6 +65,10 @@ public class Student {
         return id;
     }
 
+    /*
+        Username is made up of name + age.
+        When name or age is udated, username is also updated.
+    */
     public void setUsername() {
         this.username = name + age;
     }
