@@ -8,6 +8,8 @@ Maven is a build automation tool used to manage dependencies, compile, build and
 ## Git
 Git is used as version control system. Local changes are tracked and can be staged for commit. This can then be pushed to a remote repository on github where other people can view and checkout their own version of the code.
 
+Github can be configured to block pull requests being merged until the code has been reviewed and the CI job passes. 
+
 ![Build History](images/Git.png)
 
 ## Shippable
