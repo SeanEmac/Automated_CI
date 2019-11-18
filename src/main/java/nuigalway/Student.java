@@ -2,21 +2,25 @@ package nuigalway;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Student 
-{
+public class Student {
+
     private String name;
     private int age;
     private LocalDate dob;
     private int id;
     private String username;
-    // private Course course
-    // private List<Module> modules
+    private CourseProgram course;
+    private List<Module> modules;
 
-    public Student(String name, LocalDate dob, int id){
+    public Student(String name, LocalDate dob, int id, CourseProgram course, List<Module> modules){
         this.name = name;
         this.dob = dob;
         this.id = id;
+        this.course = course;
+        this.modules = new ArrayList<Module>(modules);
 
         setAge();
         setUsername();
@@ -57,11 +61,31 @@ public class Student
         return id;
     }
 
-    private void setUsername() {
+    public void setUsername() {
         this.username = name + age;
     }
 
     public String getUsername() {
         return username;
+    }
+
+    public void setCourse(CourseProgram course) {
+        this.course = course;
+    }
+
+    public CourseProgram getCourse() {
+        return course;
+    }
+
+    public boolean addModule(Module module) {
+        return modules.add(module);
+    }
+
+    public boolean removeModule(Module module) {
+        return modules.remove(module);
+    }
+
+    public List<Module> getModules() {
+        return modules;
     }
 }
